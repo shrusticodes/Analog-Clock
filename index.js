@@ -1,3 +1,4 @@
+import './style.css';
 const hours=document.querySelector('.hour');
 const min=document.querySelector('.min');
 const second=document.querySelector('.second');
