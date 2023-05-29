@@ -22,47 +22,57 @@ body {
 }
 
 .clock .number {
-  --degRotation: 0;
   position: absolute;
   width: 100%;
   height: 100%;
   text-align: center;
-  transform: rotate(var(--degRotation));
+  transform: rotate(360deg);
   font-size: 2rem;
 }
 
 .clock .number1 {
-  --degRotation: 30deg;
+  transform-origin: top;
+  transform: translate(22%, 25px);
 }
 .clock .number2 {
-  --degRotation: 60deg;
+  transform-origin: top;
+  transform: translate(37%, 77px);
 }
 .clock .number3 {
-  --degRotation: 90deg;
+  transform-origin: top;
+  transform: translate(42%, 134px);
 }
 .clock .number4 {
-  --degRotation: 120deg;
+  transform-origin: top;
+  transform: translate(37%, 195px);
 }
 .clock .number5 {
-  --degRotation: 150deg;
+  transform-origin: top;
+  transform: translate(22%, 246px);
 }
 .clock .number6 {
-  --degRotation: 180deg;
+  transform-origin: top;
+  top: 260px;
 }
 .clock .number7 {
-  --degRotation: 210deg;
+  transform-origin: top;
+  transform: translate(-22%, 246px);
 }
 .clock .number8 {
-  --degRotation: 240deg;
+  transform-origin: top;
+  transform: translate(-37%, 195px);
 }
 .clock .number9 {
-  --degRotation: 270deg;
+  transform-origin: top;
+  transform: translate(-42%, 134px);
 }
 .clock .number10 {
-  --degRotation: 300deg;
+  transform-origin: top;
+  transform: translate(-37%, 77px);
 }
 .clock .number11 {
-  --degRotation: 330deg;
+  transform-origin: top;
+  transform: translate(-22%, 25px);
 }
 
 .clock .hand {
