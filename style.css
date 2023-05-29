@@ -52,7 +52,7 @@ body {
 }
 .clock .number6 {
   transform-origin: top;
-  top: 260px;
+  transform: translate(0%, 260px);
 }
 .clock .number7 {
   transform-origin: top;
