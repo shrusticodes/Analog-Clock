@@ -32,11 +32,11 @@ body {
 
 .clock .number1 {
   transform-origin: top;
-  transform: translate(22%, 25px);
+  transform: translate(22%, 23px);
 }
 .clock .number2 {
   transform-origin: top;
-  transform: translate(37%, 77px);
+  transform: translate(37%, 75px);
 }
 .clock .number3 {
   transform-origin: top;
@@ -68,11 +68,11 @@ body {
 }
 .clock .number10 {
   transform-origin: top;
-  transform: translate(-37%, 77px);
+  transform: translate(-37%, 75px);
 }
 .clock .number11 {
   transform-origin: top;
-  transform: translate(-22%, 25px);
+  transform: translate(-22%, 23px);
 }
 
 .clock .hand {
@@ -93,8 +93,8 @@ body {
   position: absolute;
   background-color: black;
   z-index: 2;
-  width: 25px;
-  height: 25px;
+  width: 28px;
+  height: 28px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
