@@ -31,7 +31,7 @@ body {
 }
 
 .clock .number1 {
-  transform: translate(24%, 26px);
+  transform: translate(24%, 23px);
 }
 .clock .number2 {
   transform: translate(38%, 68px);
@@ -61,7 +61,7 @@ body {
   transform: translate(-38%, 68px);
 }
 .clock .number11 {
-  transform: translate(-24%, 26px);
+  transform: translate(-24%, 23px);
 }
 
 .clock .hand {
