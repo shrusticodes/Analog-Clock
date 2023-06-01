@@ -27,41 +27,41 @@ body {
   height: 100%;
   text-align: center;
   transform-origin: top;
-  font-size: 2rem;
+  font-size: 1.75rem;
 }
 
 .clock .number1 {
-  transform: translate(22%, 23px);
+  transform: translate(22%, 18px);
 }
 .clock .number2 {
-  transform: translate(37%, 75px);
+  transform: translate(40%, 70px);
 }
 .clock .number3 {
-  transform: translate(42%, 134px);
+  transform: translate(46%, 134px);
 }
 .clock .number4 {
-  transform: translate(37%, 195px);
+  transform: translate(40%, 197px);
 }
 .clock .number5 {
-  transform: translate(22%, 246px);
+  transform: translate(24%, 246px);
 }
 .clock .number6 {
-  transform: translate(0%, 260px);
+  transform: translate(0%, 270px);
 }
 .clock .number7 {
-  transform: translate(-22%, 246px);
+  transform: translate(-24%, 246px);
 }
 .clock .number8 {
-  transform: translate(-37%, 195px);
+  transform: translate(-40%, 197px);
 }
 .clock .number9 {
-  transform: translate(-42%, 134px);
+  transform: translate(-46%, 134px);
 }
 .clock .number10 {
-  transform: translate(-37%, 75px);
+  transform: translate(-40%, 70px);
 }
 .clock .number11 {
-  transform: translate(-22%, 23px);
+  transform: translate(-22%, 18px);
 }
 
 .clock .hand {
@@ -100,6 +100,6 @@ body {
 
 .clock .hand.hour {
   width: 9px;
-  height: 30%;
+  height: 50%;
   background-color: black;
 }
