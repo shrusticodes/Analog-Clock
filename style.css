@@ -40,7 +40,7 @@ body {
   transform: translate(46%, 134px);
 }
 .clock .number4 {
-  transform: translate(38%, 207px);
+  transform: translate(38%, 202px);
 }
 .clock .number5 {
   transform: translate(22%, 256px);
@@ -52,7 +52,7 @@ body {
   transform: translate(-22%, 256px);
 }
 .clock .number8 {
-  transform: translate(-38%, 207px);
+  transform: translate(-38%, 202px);
 }
 .clock .number9 {
   transform: translate(-46%, 134px);
