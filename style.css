@@ -103,3 +103,8 @@ body {
   height: 30%;
   background-color: black;
 }
+@keyframes smoothRotation{
+  100%{
+    transform: rotateZ(360deg);
+  }
+}
