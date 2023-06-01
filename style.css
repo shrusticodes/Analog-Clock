@@ -94,12 +94,12 @@ body {
 
 .clock .hand.min {
   width: 9px;
-  height: 50%;
+  height: 40%;
   background-color: black;
 }
 
 .clock .hand.hour {
   width: 9px;
-  height: 50%;
+  height: 30%;
   background-color: black;
 }
