@@ -24,13 +24,15 @@ setInterval(() => {
 
 function createDivs() {
   const numbersDiv = document.createElement('div');
-  // let minutesDiv, mainMinutesDiv;
-  // let k = 1;
   for (let i = 1; i <= 12; i++) {
     const newDiv = document.createElement('div');
     newDiv.className = `number number${i}`;
     let innerDiv = document.createElement('div');
     innerDiv.innerText = i;
+    for (let j=1;j<=4;j++)
+    {
+      
+    }
     newDiv.appendChild(innerDiv);
     numbersDiv.appendChild(newDiv);
     // for (let j = 1; j <= 4; j++) {
