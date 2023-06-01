@@ -90,18 +90,21 @@ body {
   width: 5px;
   height: 45%;
   background-color: rgb(205, 58, 58);
+  transition: 1s transform linear;
 }
 
 .clock .hand.min {
   width: 9px;
   height: 40%;
   background-color: black;
+  transition: 1s transform linear;
 }
 
 .clock .hand.hour {
   width: 9px;
   height: 30%;
   background-color: black;
+  transition: 1s transform linear;
 }
 @keyframes smoothRotation{
   100%{
