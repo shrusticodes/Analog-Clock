@@ -53,4 +53,3 @@ function createDivs() {
     // }
   }
   clockDiv.appendChild(numbersDiv);
-}
