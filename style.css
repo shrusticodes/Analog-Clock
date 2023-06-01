@@ -31,37 +31,37 @@ body {
 }
 
 .clock .number1 {
-  transform: translate(22%, 18px);
+  transform: translate(22%, 20px);
 }
 .clock .number2 {
-  transform: translate(40%, 70px);
+  transform: translate(40%, 68px);
 }
 .clock .number3 {
   transform: translate(46%, 134px);
 }
 .clock .number4 {
-  transform: translate(40%, 197px);
+  transform: translate(38%, 207px);
 }
 .clock .number5 {
-  transform: translate(24%, 246px);
+  transform: translate(22%, 256px);
 }
 .clock .number6 {
-  transform: translate(0%, 270px);
+  transform: translate(1%, 270px);
 }
 .clock .number7 {
-  transform: translate(-24%, 246px);
+  transform: translate(-22%, 256px);
 }
 .clock .number8 {
-  transform: translate(-40%, 197px);
+  transform: translate(-38%, 207px);
 }
 .clock .number9 {
   transform: translate(-46%, 134px);
 }
 .clock .number10 {
-  transform: translate(-40%, 70px);
+  transform: translate(-40%, 68px);
 }
 .clock .number11 {
-  transform: translate(-22%, 18px);
+  transform: translate(-22%, 20px);
 }
 
 .clock .hand {
@@ -94,7 +94,7 @@ body {
 
 .clock .hand.min {
   width: 9px;
-  height: 40%;
+  height: 50%;
   background-color: black;
 }
 
