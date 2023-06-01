@@ -1,3 +1,4 @@
+import './style.css';
 const hours = document.querySelector('.hour');
 const min = document.querySelector('.min');
 const second = document.querySelector('.second');
@@ -28,10 +29,7 @@ function createDivs() {
     newDiv.className = `number number${i}`;
     let innerDiv = document.createElement('div');
     innerDiv.innerText = i;
-    for (let j=1;j<=4;j++)
-    {
-      
-    }
+    for (let j = 1; j <= 4; j++) {}
     newDiv.appendChild(innerDiv);
     numbersDiv.appendChild(newDiv);
   }
