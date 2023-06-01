@@ -11,6 +11,9 @@ setInterval(() => {
   const minDegree = 6 * date.getMinutes();
   const hourDegree = 30 * date.getHours() + date.getMinutes() / 2;
   if (secDegree < lastAngle) revolutions = revolutions + 1;
+  // console.log(revolutions);
+  // console.log(secDegree);
+  // console.log(lastAngle);
   let secondDegreeFinal = revolutions * 360 + secDegree;
   lastAngle = secDegree;
   hours.style.transform = `rotate(${hourDegree}deg)`;
@@ -23,7 +26,13 @@ function createDivs() {
   for (let i = 1; i <= 12; i++) {
     const newDiv = document.createElement('div');
     newDiv.className = `number number${i}`;
-    newDiv.innerText = i;
+    let innerDiv = document.createElement('div');
+    innerDiv.innerText = i;
+    for (let j=1;j<=4;j++)
+    {
+      
+    }
+    newDiv.appendChild(innerDiv);
     numbersDiv.appendChild(newDiv);
   }
   clockDiv.appendChild(numbersDiv);
