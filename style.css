@@ -35,6 +35,9 @@ body {
 .number1 div {
   transform: rotate(-30deg);
 }
+.number .number1 .minutes1{
+  background-color: black;
+}
 .number2 {
   transform: rotate(60deg);
 }

@@ -29,8 +29,13 @@ function createDivs() {
     newDiv.className = `number number${i}`;
     let innerDiv = document.createElement('div');
     innerDiv.innerText = i;
-    for (let j = 1; j <= 4; j++) {}
     newDiv.appendChild(innerDiv);
+    for (let j = 1; j <= 4; j++) {
+      let minutesDiv = document.createElement('div');
+      minutesDiv.className = `number${i} minutes${j}`;
+      newDiv.appendChild(minutesDiv);
+      console.log(minutesDiv);
+    }
     numbersDiv.appendChild(newDiv);
   }
   clockDiv.appendChild(numbersDiv);
