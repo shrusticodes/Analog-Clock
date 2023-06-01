@@ -28,15 +28,17 @@ body {
   text-align: center;
   font-size: 1.75rem;
 }
-
+.minutes {
+  background-color: black;
+  width: 3px;
+  height: 10px;
+  z-index: 5;
+}
 .number1 {
   transform: rotate(30deg);
 }
 .number1 div {
   transform: rotate(-30deg);
-}
-.number .number1 .minutes1{
-  background-color: black;
 }
 .number2 {
   transform: rotate(60deg);

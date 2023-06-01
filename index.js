@@ -24,6 +24,8 @@ setInterval(() => {
 
 function createDivs() {
   const numbersDiv = document.createElement('div');
+  let minutesDiv, mainMinutesDiv;
+  let k = 1;
   for (let i = 1; i <= 12; i++) {
     const newDiv = document.createElement('div');
     newDiv.className = `number number${i}`;
@@ -31,10 +33,19 @@ function createDivs() {
     innerDiv.innerText = i;
     newDiv.appendChild(innerDiv);
     for (let j = 1; j <= 4; j++) {
-      let minutesDiv = document.createElement('div');
-      minutesDiv.className = `number${i} minutes${j}`;
-      newDiv.appendChild(minutesDiv);
-      console.log(minutesDiv);
+      mainMinutesDiv = document.createElement('div');
+      minutesDiv = document.createElement('div');
+      minutesDiv.className = `minutes`;
+      let eachMinDegree = 6 * k;
+      if (eachMinDegree % 5 == 0) {
+        k++;
+        eachMinDegree = 6 * k;
+        minutesDiv.style.transform = `rotate(${eachMinDegree})`;
+      }
+      console.log(eachMinDegree);
+      k++;
+      mainMinutesDiv.appendChild(minutesDiv);
+     
     }
     numbersDiv.appendChild(newDiv);
   }
