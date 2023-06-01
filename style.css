@@ -43,13 +43,13 @@ body {
   transform: translate(38%, 202px);
 }
 .clock .number5 {
-  transform: translate(22%, 256px);
+  transform: translate(22%, 252px);
 }
 .clock .number6 {
   transform: translate(1%, 270px);
 }
 .clock .number7 {
-  transform: translate(-22%, 256px);
+  transform: translate(-22%, 252px);
 }
 .clock .number8 {
   transform: translate(-38%, 202px);
