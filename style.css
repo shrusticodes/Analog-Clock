@@ -28,13 +28,51 @@ body {
   text-align: center;
   font-size: 1.75rem;
 }
-.minutes {
-  background-color: black;
-  width: 3px;
-  height: 10px;
-  z-index: 5;
+
+.clock .hand {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  border-radius: 30px;
+  transform-origin: bottom;
+  z-index: 1;
 }
-.number1 {
+
+.clock::after {
+  content: '';
+  position: absolute;
+  background-color: black;
+  z-index: 2;
+  width: 28px;
+  height: 28px;
+  top: 50%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.clock .hand.second {
+  width: 3px;
+  height: 45%;
+  background-color: rgb(205, 58, 58);
+  transition: 1s transform linear;
+}
+
+.clock .hand.min {
+  width: 6px;
+  height: 40%;
+  background-color: black;
+  transition: 1s transform linear;
+}
+
+.clock .hand.hour {
+  width: 6px;
+  height: 30%;
+  background-color: black;
+  transition: 1s transform linear;
+}
+
+/* .number1 {
   transform: rotate(30deg);
 }
 .number1 div {
@@ -99,47 +137,4 @@ body {
 }
 .number11 div {
   transform: rotate(-330deg);
-}
-
-.clock .hand {
-  position: absolute;
-  bottom: 50%;
-  left: 50%;
-  border-radius: 30px;
-  transform-origin: bottom;
-  z-index: 1;
-}
-
-.clock::after {
-  content: '';
-  position: absolute;
-  background-color: black;
-  z-index: 2;
-  width: 28px;
-  height: 28px;
-  top: 50%;
-  left: 52%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-}
-
-.clock .hand.second {
-  width: 3px;
-  height: 45%;
-  background-color: rgb(205, 58, 58);
-  transition: 1s transform linear;
-}
-
-.clock .hand.min {
-  width: 6px;
-  height: 40%;
-  background-color: black;
-  transition: 1s transform linear;
-}
-
-.clock .hand.hour {
-  width: 6px;
-  height: 30%;
-  background-color: black;
-  transition: 1s transform linear;
-}
+} */

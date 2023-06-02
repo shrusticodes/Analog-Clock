@@ -1,4 +1,4 @@
-import './style.css';
+// import './style.css';
 const hours = document.querySelector('.hour');
 const min = document.querySelector('.min');
 const second = document.querySelector('.second');
@@ -34,13 +34,16 @@ function createDivs() {
   for (let i = 1; i <= 12; i++) {
     const newDiv = document.createElement('div');
     newDiv.className = `number number${i}`;
-    let innerDiv = document.createElement('div');
+    const innerDiv = document.createElement('div');
     innerDiv.innerText = i;
     newDiv.appendChild(innerDiv);
     numbersDiv.appendChild(newDiv);
+    newDiv.style.transform=`rotate(${i*6*5}deg)`;
+    innerDiv.style.transform=`rotate(${-i*6*5}deg)`;
   }
   clockDiv.appendChild(numbersDiv);
 }
+
 
 // for (let j = 1; j <= 4; j++) {
 //   minutesDiv = document.createElement('div');
@@ -59,3 +62,13 @@ function createDivs() {
 //   mainMinutesDiv.appendChild(minutesDiv);
 //   numbersDiv.appendChild(mainMinutesDiv);
 // }
+ // for (let j = 1; j <= 4; j++) {
+    //   minDiv = document.createElement('div');
+    //   minDiv.className = `upperMinDiv`
+    //   const minutesDiv = document.createElement('div');
+    //   minutesDiv.className = 'minutes';
+    //   minDiv.style.transform = `rotate(${j * 6}deg)`;
+    //   minutesDiv.style.transform = `rotate(${-j * 6}deg)`;
+    //   minDiv.appendChild(minutesDiv);
+    //   numbersDiv.appendChild(minDiv);
+    // }
