@@ -47,9 +47,6 @@ function createDivs() {
     minDiv.style.margin = "auto";
     minDiv.style.zIndex=9;
     innerDiv.appendChild(minDiv);
-    // innerDiv.innerText = ".";
-    // innerDiv.style.zIndex = "7";
-    // innerDiv.style.font = `1rem solid`;
     }
     newDiv.appendChild(innerDiv);
     numbersDiv.appendChild(newDiv);
@@ -58,31 +55,3 @@ function createDivs() {
   clockDiv.appendChild(numbersDiv);
 }
 
-
-// for (let j = 1; j <= 4; j++) {
-//   minutesDiv = document.createElement('div');
-//   mainMinutesDiv = document.createElement('div');
-//   mainMinutesDiv.className = `minutes`;
-//   minutesDiv.className = `minutes${k}`;
-//   let eachMinDegree = 6 * k;
-//   if (eachMinDegree % 5 == 0) {
-//     k++;
-//     eachMinDegree = 6 * k;
-//     mainMinutesDiv.style.transform = `rotate(${eachMinDegree})`;
-//   }
-//   console.log(eachMinDegree);
-//   console.log(k);
-//   k++;
-//   mainMinutesDiv.appendChild(minutesDiv);
-//   numbersDiv.appendChild(mainMinutesDiv);
-// }
- // for (let j = 1; j <= 4; j++) {
-    //   minDiv = document.createElement('div');
-    //   minDiv.className = `upperMinDiv`
-    //   const minutesDiv = document.createElement('div');
-    //   minutesDiv.className = 'minutes';
-    //   minDiv.style.transform = `rotate(${j * 6}deg)`;
-    //   minutesDiv.style.transform = `rotate(${-j * 6}deg)`;
-    //   minDiv.appendChild(minutesDiv);
-    //   numbersDiv.appendChild(minDiv);
-    // }

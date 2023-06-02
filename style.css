@@ -20,12 +20,12 @@ body {
   border: 7px solid black;
   position: relative;
 }
-.minutes{
+.minutes {
   width: 2px;
-  height : 5px;
+  height: 7px;
   background-color: black;
+  border-radius: 70%;
 }
-
 .clock .number {
   position: absolute;
   width: 100%;
