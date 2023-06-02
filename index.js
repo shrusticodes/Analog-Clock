@@ -39,25 +39,23 @@ function createDivs() {
     newDiv.appendChild(innerDiv);
     numbersDiv.appendChild(newDiv);
   }
-
   clockDiv.appendChild(numbersDiv);
 }
 
-
-  // for (let j = 1; j <= 4; j++) {
-  //   minutesDiv = document.createElement('div');
-  //   mainMinutesDiv = document.createElement('div');
-  //   mainMinutesDiv.className = `minutes`;
-  //   minutesDiv.className = `minutes${k}`;
-  //   let eachMinDegree = 6 * k;
-  //   if (eachMinDegree % 5 == 0) {
-  //     k++;
-  //     eachMinDegree = 6 * k;
-  //     mainMinutesDiv.style.transform = `rotate(${eachMinDegree})`;
-  //   }
-  //   console.log(eachMinDegree);
-  //   console.log(k);
-  //   k++;
-  //   mainMinutesDiv.appendChild(minutesDiv);
-  //   numbersDiv.appendChild(mainMinutesDiv);
-  // }
+// for (let j = 1; j <= 4; j++) {
+//   minutesDiv = document.createElement('div');
+//   mainMinutesDiv = document.createElement('div');
+//   mainMinutesDiv.className = `minutes`;
+//   minutesDiv.className = `minutes${k}`;
+//   let eachMinDegree = 6 * k;
+//   if (eachMinDegree % 5 == 0) {
+//     k++;
+//     eachMinDegree = 6 * k;
+//     mainMinutesDiv.style.transform = `rotate(${eachMinDegree})`;
+//   }
+//   console.log(eachMinDegree);
+//   console.log(k);
+//   k++;
+//   mainMinutesDiv.appendChild(minutesDiv);
+//   numbersDiv.appendChild(mainMinutesDiv);
+// }
