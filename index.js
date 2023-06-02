@@ -68,7 +68,6 @@ function createButton() {
   mainDiv.appendChild(button);
 }
 function setMode() {
-  console.log('button clicked');
   const buttonElement = document.querySelector('button');
   const body = document.body;
   let minutes = document.getElementsByClassName('minutes');
