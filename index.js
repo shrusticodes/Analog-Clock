@@ -31,15 +31,29 @@ setInterval(() => {
 
 function createDivs() {
   const numbersDiv = document.createElement('div');
-  for (let i = 1; i <= 12; i++) {
+  let k = 1; 
+  for (let i = 1; i <= 60; i++) {
     const newDiv = document.createElement('div');
     newDiv.className = `number number${i}`;
     const innerDiv = document.createElement('div');
-    innerDiv.innerText = i;
+    if(i % 5 == 0){
+    innerDiv.innerText = k;
+    k++;
+    innerDiv.style.transform=`rotate(${-i*6}deg)`;
+    }
+    else {
+    const minDiv = document.createElement('div');
+    minDiv.className = "minutes";
+    minDiv.style.margin = "auto";
+    minDiv.style.zIndex=9;
+    innerDiv.appendChild(minDiv);
+    // innerDiv.innerText = ".";
+    // innerDiv.style.zIndex = "7";
+    // innerDiv.style.font = `1rem solid`;
+    }
     newDiv.appendChild(innerDiv);
     numbersDiv.appendChild(newDiv);
-    newDiv.style.transform=`rotate(${i*6*5}deg)`;
-    innerDiv.style.transform=`rotate(${-i*6*5}deg)`;
+    newDiv.style.transform=`rotate(${i*6}deg)`;
   }
   clockDiv.appendChild(numbersDiv);
 }
