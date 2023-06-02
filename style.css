@@ -21,10 +21,9 @@ body {
   position: relative;
 }
 .minutes {
-  width: 2px;
+  width: 1.5px;
   height: 7px;
   background-color: black;
-  border-radius: 70%;
 }
 .clock .number {
   position: absolute;
