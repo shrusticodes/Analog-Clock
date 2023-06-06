@@ -10,7 +10,7 @@ body {
   background: linear-gradient(to right, hsl(2, 93%, 48%), hsl(20, 83%, 51%));
 }
 .dark {
-  background: linear-gradient(to right, hsl(224, 47%, 33%), hsl(225, 52%, 18%));
+  background: linear-gradient(to right, hsl(224, 47%, 33%), hsl(225, 49%, 26%));
 }
 
 button{

@@ -36,16 +36,13 @@ setInterval(() => {
 
 function createDivs() {
   const numbersDiv = document.createElement('div');
-  let k = 1;
-  for (let i = 1; i <= 60; i++) {
-    const newDiv = document.createElement('div');
-    newDiv.className = `number number${i}`;
-    const innerDiv = document.createElement('div');
-    if (i % 5 == 0) {
-      innerDiv.innerText = k;
-      k++;
-      innerDiv.style.transform = `rotate(${-i * 6}deg)`;
-    } else {
+  let k=1;
+  for (let i=1;i<=12;i++)
+  {
+    for (let j=1;j<=4;j++){
+      const newDiv = document.createElement('div');
+      newDiv.className = `number`;
+      const innerDiv = document.createElement('div');
       const minDiv = document.createElement('div');
       minDiv.className = 'minutes';
       minDiv.style.margin = 'auto';
@@ -53,13 +50,46 @@ function createDivs() {
       minDiv.style.height = '7px';
       minDiv.style.backgroundColor = `black`;
       innerDiv.appendChild(minDiv);
+      newDiv.appendChild(innerDiv);
+      numbersDiv.appendChild(newDiv);
+      newDiv.style.transform = `rotate(${k++ * 6}deg)`;
     }
+    const newDiv = document.createElement('div');
+    newDiv.className = `number`;
+    const innerDiv = document.createElement('div');
+    innerDiv.innerText=i;
+    innerDiv.style.transform = `rotate(${-i * 6 * 5}deg)`;
     newDiv.appendChild(innerDiv);
     numbersDiv.appendChild(newDiv);
-    newDiv.style.transform = `rotate(${i * 6}deg)`;
+    newDiv.style.transform = `rotate(${i * 6 * 5}deg)`;
+    k++;
   }
-  clockDiv.appendChild(numbersDiv);
-}
+    clockDiv.appendChild(numbersDiv);
+  }
+  // let k = 1;
+  // for (let i = 1; i <= 60; i++) {
+  //   const newDiv = document.createElement('div');
+  //   newDiv.className = `number number${i}`;
+  //   const innerDiv = document.createElement('div');
+  //   if (i % 5 == 0) {
+  //     innerDiv.innerText = k;
+  //     k++;
+  //     innerDiv.style.transform = `rotate(${-i * 6}deg)`;
+  //   } else {
+      // const minDiv = document.createElement('div');
+      // minDiv.className = 'minutes';
+      // minDiv.style.margin = 'auto';
+      // minDiv.style.width = '1.5px';
+      // minDiv.style.height = '7px';
+      // minDiv.style.backgroundColor = `black`;
+      // innerDiv.appendChild(minDiv);
+  //   }
+    // newDiv.appendChild(innerDiv);
+    // numbersDiv.appendChild(newDiv);
+    // newDiv.style.transform = `rotate(${i * 6}deg)`;
+  // }
+  // clockDiv.appendChild(numbersDiv);
+
 function createButton() {
   const button = document.createElement('button');
   button.style.marginLeft = '28%';
