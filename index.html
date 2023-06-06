@@ -14,7 +14,19 @@
       <div class="hand min"></div>
       <div class="hand second"></div>
     </div>
-  </div>
+      <form name="form" id="form" class="light-mode">
+        Country:
+        <select name="country" id="country">
+          <option value="Select Country">Select Country</option>
+          <option value="UTC" >UTC</option>
+          <option value="India">India</option>
+          <option value="America">America</option>
+          <option value="Japan">Japan</option>
+          <option value="South Africa">South Africa</option>
+        </select>
+        <input type="button" value="Submit" class = "light-mode" onclick="setTime()" />
+      </form>
+    </div>
     <script src="index.js"></script>
   </body>
 </html>
