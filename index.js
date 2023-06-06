@@ -122,10 +122,10 @@ function setTime()
       timeZone: 'Asia/Tokyo'
     };
   }
-  else if(selectElement.value=="India")
+  else if(selectElement.value=="UTC")
   {
     options = {
-      timeZone: 'Asia/Kolkata'
+      timeZone: 'UTC'
     };
   }
   else if(selectElement.value=="South Africa")
@@ -136,7 +136,7 @@ function setTime()
   }
   else{
     options = {
-      timeZone: 'UTC'
+      timeZone: 'Asia/Kolkata'
     };
   }
 }
