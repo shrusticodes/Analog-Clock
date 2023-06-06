@@ -74,14 +74,12 @@ function setMode() {
   const buttonElement = document.querySelector('button');
   const body = document.body;
   const form = document.querySelector('form');
-  const input = document.querySelector('input');
   let minutes = document.getElementsByClassName('minutes');
   if (buttonElement.className == 'light-mode') {
     buttonElement.className = 'dark-theme';
     body.className = 'dark';
     clockDiv.className = 'clock dark-theme';
     form.className ="dark-theme";
-    input.className = "dark-theme";
     clockDiv.style.border = `7px solid rgb(215, 213, 213)`;
     hours.style.backgroundColor = `hsl(224, 42%, 57%)`;
     min.style.backgroundColor = `hsl(224, 42%, 57%)`;
@@ -95,7 +93,6 @@ function setMode() {
     body.className = 'light';
     clockDiv.className = 'clock light-mode';
     form.className ="light-mode";
-    input.className = "light-mode";
     hours.style.backgroundColor = 'black';
     min.style.backgroundColor = 'black';
     clockDiv.style.border = `7px solid black`;

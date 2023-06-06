@@ -7,10 +7,10 @@ body {
   overflow: hidden;
 }
 .light {
-  background: linear-gradient(to right, hsl(17, 72%, 48%), hsl(15, 93%, 49%));
+  background: linear-gradient(to right, hsl(2, 93%, 48%), hsl(20, 83%, 51%));
 }
 .dark {
-  background: linear-gradient(to right, hsl(225, 45%, 18%), hsl(226, 71%, 10%));
+  background: linear-gradient(to right, hsl(224, 47%, 33%), hsl(225, 52%, 18%));
 }
 
 button{
@@ -59,7 +59,7 @@ button{
   width: 28px;
   height: 28px;
   top: 50%;
-  left: 52%;
+  left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
 }
@@ -86,7 +86,7 @@ button{
 }
 
 .dark-theme{
-  background-color: rgba(50, 72, 127, 0.64);
+  background-color: rgba(15, 27, 58, 0.722);
   border: 2.25px solid rgb(215, 213, 213);
   color: rgb(215, 213, 213);
 }
@@ -104,11 +104,14 @@ input{
   padding: 2px;
   height:30px;
   border-radius: 5px;
+  background-color: rgba(240, 240, 239, 0.8);
 }
 select{
   width: 50%;
   height: 30px;
   background-color: rgba(240, 240, 239, 0.8);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
   border-radius: 5px;
   border: 2px solid black;
 }
