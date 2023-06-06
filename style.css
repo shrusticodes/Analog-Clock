@@ -103,6 +103,7 @@ input{
   margin-left: 5px;
   padding: 2px;
   height:30px;
+  border: 2px solid black;
   border-radius: 5px;
   background-color: rgba(240, 240, 239, 0.8);
 }
