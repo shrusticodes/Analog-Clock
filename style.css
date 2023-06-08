@@ -6,14 +6,14 @@
   flex-wrap: wrap;
 }
 
-button{
+button {
   width: 120px;
-  height :45px;
+  height: 45px;
   border-radius: 10px;
 }
 
 .light-mode {
-  background-color: rgba(255, 253, 253, 0.76);;
+  background-color: rgba(255, 253, 253, 0.76);
   border: 2.25px solid black;
   color: black;
 }
@@ -22,7 +22,7 @@ button{
   width: 200px;
   height: 200px;
   margin-top: 50px;
-  margin-left: 50px;
+  margin-left: 70px;
   border: 7px solid black;
   z-index: 10;
   border-radius: 50%;
@@ -81,13 +81,13 @@ button{
   transition: 1s transform linear;
 }
 
-.dark-theme{
+.dark-theme {
   background-color: rgba(0, 0, 0, 0.462);
   border: 2.25px solid rgb(215, 213, 213);
   color: rgb(215, 213, 213);
 }
 
-#form{
+#form {
   margin: 10px;
   padding: 10px;
   width: 300px;
@@ -97,7 +97,7 @@ button{
   margin-left: 25px;
 }
 
-select{
+select {
   width: 65%;
   height: 30px;
   background-color: rgba(240, 240, 239, 0.8);
@@ -107,8 +107,8 @@ select{
   border: 2px solid black;
 }
 
-#add{
+#add {
   margin-right: 20px;
-  font-size:20px;
+  font-size: 20px;
   float: right;
 }

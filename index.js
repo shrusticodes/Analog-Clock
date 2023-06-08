@@ -1,4 +1,4 @@
-// import './style.css';
+import './style.css';
 class ClockApp {
   constructor() {
     this.secRevolutions = 0;
