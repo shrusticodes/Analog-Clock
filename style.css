@@ -13,14 +13,14 @@ button{
 }
 
 .light-mode {
-  background-color: rgba(255, 255, 255, 0.723);
+  background-color: rgba(255, 253, 253, 0.76);;
   border: 2.25px solid black;
   color: black;
 }
 
 .clock {
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   margin-top: 50px;
   margin-left: 50px;
   border: 7px solid black;
@@ -105,4 +105,10 @@ select{
   font-size: 15px;
   border-radius: 5px;
   border: 2px solid black;
+}
+
+#add{
+  margin-right: 20px;
+  font-size:20px;
+  float: right;
 }
