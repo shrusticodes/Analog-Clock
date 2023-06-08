@@ -1,4 +1,4 @@
-// import './style.css';
+import './style.css';
 class ClockApp {
   constructor() {
     this.secRevolutions = 0;
@@ -7,18 +7,18 @@ class ClockApp {
     this.minLastAngle = 0;
     this.hourRevolutions = 0;
     this.hourLastAngle = 0;
-    this.clock=null;
+    this.clock = null;
     this.hourHand = null;
     this.minutesHand = null;
     this.secondsHand = null;
-    this.minutesDiv=null;
-    this.changeThemeButton=null;
+    this.minutesDiv = null;
+    this.changeThemeButton = null;
     this.containerDiv = null;
-    this.optionsDiv=null;
+    this.optionsDiv = null;
     this.options = {
-      timeZone: 'Asia/Kolkata'
+      timeZone: 'Asia/Kolkata',
     };
-    
+
     this.initializeClock();
   }
 
@@ -30,7 +30,7 @@ class ClockApp {
     this.changeThemeButton = document.createElement('button');
     this.changeThemeButton.innerText = 'Change Mode';
     this.changeThemeButton.style.marginTop = '10px';
-    this.changeThemeButton.style.fontSize = '1rem'
+    this.changeThemeButton.style.fontSize = '1rem';
     this.changeThemeButton.className = 'light-mode';
 
     this.createClockFace();
@@ -39,27 +39,30 @@ class ClockApp {
   }
 
   startInterval() {
-    setInterval(() => { 
+    setInterval(() => {
       const currentDate = new Date();
       const localDateTime = currentDate.toLocaleString('en-US', this.options);
       const date = new Date(localDateTime);
-      
+
       const secDegree = 6 * date.getSeconds();
       const minDegree = 6 * date.getMinutes();
       const hourDegree = 30 * date.getHours() + date.getMinutes() / 2;
-      
-      if (secDegree < this.secLastAngle) this.secRevolutions = this.secRevolutions + 1;
-      if (minDegree < this.minLastAngle) this.minRevolutions = this.minRevolutions + 1;
-      if (hourDegree < this.hourLastAngle) this.hourRevolutions = this.hourRevolutions + 1;
-      
+
+      if (secDegree < this.secLastAngle)
+        this.secRevolutions = this.secRevolutions + 1;
+      if (minDegree < this.minLastAngle)
+        this.minRevolutions = this.minRevolutions + 1;
+      if (hourDegree < this.hourLastAngle)
+        this.hourRevolutions = this.hourRevolutions + 1;
+
       const secondDegreeFinal = this.secRevolutions * 360 + secDegree;
       const minDegreeFinal = this.minRevolutions * 360 + minDegree;
       const hourDegreeFinal = this.hourRevolutions * 360 + hourDegree;
-      
+
       this.secLastAngle = secDegree;
       this.minLastAngle = minDegree;
       this.hourLastAngle = hourDegree;
-      
+
       this.hourHand.style.transform = `rotate(${hourDegreeFinal}deg)`;
       this.minutesHand.style.transform = `rotate(${minDegreeFinal}deg)`;
       this.secondsHand.style.transform = `rotate(${secondDegreeFinal}deg)`;
@@ -130,7 +133,14 @@ class ClockApp {
     this.optionsDiv.className = 'light-mode';
     this.optionsDiv.innerText = 'Timezone: ';
     const select = document.createElement('select');
-    const countries = ["Select Country", "India", "UTC", "USA", "Japan", "South Africa"];
+    const countries = [
+      'Select Country',
+      'India',
+      'UTC',
+      'USA',
+      'Japan',
+      'South Africa',
+    ];
     countries.forEach((country) => {
       const option = document.createElement('option');
       option.value = country;
@@ -140,7 +150,7 @@ class ClockApp {
     this.optionsDiv.appendChild(select);
     this.containerDiv.appendChild(this.optionsDiv);
     this.optionsDiv.appendChild(this.changeThemeButton);
-    
+
     select.addEventListener('change', (event) => {
       const selectedCountry = event.target.value;
       this.updateTimezone(selectedCountry);
@@ -170,17 +180,12 @@ class ClockApp {
     }
   }
 
-  updateTheme()
-  {
-    
-    if(this.changeThemeButton.className === 'light-mode')
-    {
-       this.changeThemeButton.className = 'dark-theme';
-       this.clock.className = 'clock dark-theme';
-       this.optionsDiv.className = 'dark-theme';
-    }
-    else{
-      
+  updateTheme() {
+    if (this.changeThemeButton.className === 'light-mode') {
+      this.changeThemeButton.className = 'dark-theme';
+      this.clock.className = 'clock dark-theme';
+      this.optionsDiv.className = 'dark-theme';
+    } else {
     }
   }
 }
@@ -188,6 +193,8 @@ class ClockApp {
 function renderClockApp() {
   new ClockApp();
 }
+const addClock = document.querySelector('#add');
+addClock.addEventListener('click', renderClockApp);
 
 // function setTheme() {
 //   const themeButton = document.querySelector('#changeMode');
