@@ -1,4 +1,4 @@
-import './style.css';
+// import './style.css';
 class ClockApp {
   constructor() {
     this.secRevolutions = 0;
@@ -91,14 +91,14 @@ class ClockApp {
 
         const innerDiv = document.createElement('div');
 
-        const minutesDiv = document.createElement('div');
-        minutesDiv.className = 'minutes';
-        minutesDiv.style.margin = 'auto';
-        minutesDiv.style.width = '1px';
-        minutesDiv.style.height = '5px';
-        minutesDiv.style.backgroundColor = 'black';
+        this.minutesDiv = document.createElement('div');
+        this.minutesDiv.className = 'minutes';
+        this.minutesDiv.style.margin = 'auto';
+        this.minutesDiv.style.width = '1px';
+        this.minutesDiv.style.height = '5px';
+        this.minutesDiv.style.backgroundColor = 'black';
 
-        innerDiv.appendChild(minutesDiv);
+        innerDiv.appendChild(this.minutesDiv);
         newDiv.appendChild(innerDiv);
         newDiv.style.transform = `rotate(${k++ * 6}deg)`;
 
@@ -131,7 +131,8 @@ class ClockApp {
         this.hourHand,
         this.minutesHand,
         this.secondsHand,
-        this.optionsDiv
+        this.optionsDiv,
+        this.minutesDiv
       )
     );
   }
@@ -195,9 +196,10 @@ class ClockApp {
     hourHand,
     minutesHand,
     secondsHand,
-    optionsDiv
+    optionsDiv,
+    minutesDiv
   ) {
-    this.minutesDiv = document.querySelectorAll('.minutes');
+    minutesDiv = document.querySelectorAll('.minutes');
     if (changeModeButton.className === 'light-mode') {
       changeModeButton.className = 'dark-theme';
 
@@ -211,7 +213,7 @@ class ClockApp {
       secondsHand.style.backgroundColor = `rgb(215, 213, 213)`;
 
       for (let i = 0; i < minutesDiv.length; i++) {
-        this.minutesDiv[i].style.backgroundColor = `rgb(215, 213, 213)`;
+        minutesDiv[i].style.backgroundColor = `rgb(215, 213, 213)`;
       }
     } else {
       changeModeButton.className = 'light-mode';
@@ -226,7 +228,7 @@ class ClockApp {
       secondsHand.style.backgroundColor = 'red';
 
       for (let i = 0; i < minutesDiv.length; i++) {
-        this.minutesDiv[i].style.backgroundColor = `black`;
+        minutesDiv[i].style.backgroundColor = `black`;
       }
     }
   }
