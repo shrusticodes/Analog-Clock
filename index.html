@@ -7,26 +7,9 @@
     <title>Tik Tik Tik</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class = "light">
-    <div class="main">
-    <div class="clock light-mode">
-      <div class="hand hour"></div>
-      <div class="hand min"></div>
-      <div class="hand second"></div>
-    </div>
-      <form name="form" id="form" class="light-mode">
-        Country:
-        <select name="country" id="country">
-          <option value="Select Country">Select Country</option>
-          <option value="UTC" >UTC</option>
-          <option value="India">India</option>
-          <option value="America">America</option>
-          <option value="Japan">Japan</option>
-          <option value="South Africa">South Africa</option>
-        </select>
-        <input type="button" value="Submit" onclick="setTime()" />
-      </form>
-    </div>
+  <body style=" background: linear-gradient(to right, hsl(227, 34%, 41%), hsl(224, 61%, 16%));">
+    <button onclick=renderClockApp() class="light-mode" style="margin-right: 20px; font-size:20px;">Add Clock</button>
+    <div class="main"></div>
     <script src="index.js"></script>
   </body>
 </html>

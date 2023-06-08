@@ -1,32 +1,28 @@
-body {
+.main {
   display: flex;
   justify-content: center;
-  align-items: center;
-  min-height: 75vh;
   position: relative;
-  overflow: hidden;
-}
-.light {
-  background: linear-gradient(to right, hsl(2, 93%, 48%), hsl(20, 83%, 51%));
-}
-.dark {
-  background: linear-gradient(to right, hsl(224, 47%, 33%), hsl(225, 49%, 26%));
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 button{
-  font-size: 20px;
-  width: 150px;
+  width: 120px;
   height :45px;
+  border-radius: 10px;
 }
 
 .light-mode {
-  background-color: rgba(240, 240, 239, 0.8);
+  background-color: rgba(255, 255, 255, 0.723);
   border: 2.25px solid black;
   color: black;
 }
+
 .clock {
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
+  margin-top: 50px;
+  margin-left: 50px;
   border: 7px solid black;
   z-index: 10;
   border-radius: 50%;
@@ -56,8 +52,8 @@ button{
   position: absolute;
   background-color: var(--circleColor, black);
   z-index: 2;
-  width: 28px;
-  height: 28px;
+  width: 25px;
+  height: 25px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -86,29 +82,23 @@ button{
 }
 
 .dark-theme{
-  background-color: rgba(15, 27, 58, 0.722);
+  background-color: rgba(0, 0, 0, 0.462);
   border: 2.25px solid rgb(215, 213, 213);
   color: rgb(215, 213, 213);
 }
+
 #form{
-  margin-top: 20px;
+  margin: 10px;
   padding: 10px;
+  width: 300px;
   font-size: 20px;
   font-family: Arial, Helvetica, sans-serif;
   border-radius: 10px;
+  margin-left: 25px;
 }
-input{
-  float: right;
-  font-size: 15px;
-  margin-left: 5px;
-  padding: 2px;
-  height:30px;
-  border: 2px solid black;
-  border-radius: 5px;
-  background-color: rgba(240, 240, 239, 0.8);
-}
+
 select{
-  width: 50%;
+  width: 65%;
   height: 30px;
   background-color: rgba(240, 240, 239, 0.8);
   font-family: Arial, Helvetica, sans-serif;
