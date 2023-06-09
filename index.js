@@ -82,25 +82,47 @@ class ClockApp {
     const numbersDiv = document.createElement('div');
     numbersDiv.className = 'numbers-container';
 
-    let k = 1;
-    for (let i = 1; i <= 60; i++) {
-      const newDiv = document.createElement('div');
-      newDiv.className = `number number${i}`;
-      const innerDiv = document.createElement('div');
-      if (i % 5 == 0) {
-        innerDiv.innerText = k;
-        k++;
-        innerDiv.style.transform = `rotate(${-i * 6}deg)`;
-      } else {
-        const minDiv = document.createElement('div');
-        minDiv.className = 'minutes';
-        innerDiv.appendChild(minDiv);
-      }
-      newDiv.appendChild(innerDiv);
-      numbersDiv.appendChild(newDiv);
-      newDiv.style.transform = `rotate(${i * 6}deg)`;
-    }
+    let firstHalfNumber = 1, secondHalfNumber = 7;
 
+    for (let i = 1; i <= 30; i++) {
+      const newDiv = document.createElement('div');
+      newDiv.className = 'number';
+      const innerDiv1 = document.createElement('div');
+      const innerDiv2 = document.createElement('div');
+
+      if (i % 5 == 0) {
+        innerDiv1.innerText = firstHalfNumber;
+        innerDiv1.style.transform = `rotate(${-i * 6}deg)`;
+        firstHalfNumber++;
+
+        innerDiv2.innerText = secondHalfNumber;
+        innerDiv2.style.bottom = '0';
+        innerDiv2.style.position = 'absolute';
+        innerDiv2.style.marginLeft = '45%';
+        innerDiv2.style.transform = `rotate(${-i * 6}deg)`;
+        secondHalfNumber++;
+      }
+      else {
+        const minuteDiv1 = document.createElement('div');
+        minuteDiv1.className = 'minutes';
+        innerDiv1.appendChild(minuteDiv1);
+
+        const minuteDiv2 = document.createElement('div');
+        minuteDiv2.className = 'minutes';
+        minuteDiv2.style.width = '1.5px';
+        innerDiv2.appendChild(minuteDiv2);
+        innerDiv2.style.marginLeft = '50%';
+        innerDiv2.style.bottom = '0';
+        innerDiv2.style.position = 'absolute';
+
+      }
+      newDiv.appendChild(innerDiv1);
+      newDiv.appendChild(innerDiv2);
+      newDiv.style.transform = `rotate(${i * 6}deg)`;
+
+      numbersDiv.appendChild(newDiv);
+
+    }
     this.clock.appendChild(numbersDiv);
     this.containerDiv.appendChild(this.clock);
     
