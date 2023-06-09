@@ -81,6 +81,13 @@ button {
   transition: 1s transform linear;
 }
 
+.minutes{
+  margin: auto;
+  width: 1px;
+  height: 5px;
+  background-color: black;
+}
+
 .dark-theme {
   background-color: rgba(0, 0, 0, 0.462);
   border: 2.25px solid rgb(215, 213, 213);

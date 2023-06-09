@@ -1,0 +1,40 @@
+ for (let i = 1; i <= 30; i++) {
+      const newDiv = document.createElement('div');
+      newDiv.className = 'number';
+      const innerDiv1 = document.createElement('div');
+      const innerDiv2 = document.createElement('div');
+
+      if (i % 5 == 0) {
+        innerDiv1.innerText = firstHalfNumber;
+        innerDiv1.style.transform = `rotate(${-i * 6}deg)`;
+        firstHalfNumber++;
+
+        innerDiv2.innerText = secondHalfNumber;
+        innerDiv2.style.bottom = '0';
+        innerDiv2.style.position = 'absolute';
+        innerDiv2.style.marginLeft = '40%';
+        innerDiv2.style.transform = `rotate(${secondHalfNumber * 6 * 5}deg)`;
+        secondHalfNumber++;
+      }
+      else {
+        const minuteDiv1 = document.createElement('div');
+        minuteDiv1.className = 'minutes';
+        innerDiv2.style.top = '0';
+        innerDiv2.style.position = 'absolute';
+        innerDiv1.appendChild(minuteDiv1);
+
+        const minuteDiv2 = document.createElement('div');
+        minuteDiv2.className = 'minutes';
+        minuteDiv2.style.marginLeft = '50%';
+        innerDiv2.style.bottom = '0';
+        innerDiv2.style.position = 'absolute';
+        innerDiv2.appendChild(minuteDiv2);
+        
+      }
+      newDiv.appendChild(innerDiv1);
+      newDiv.appendChild(innerDiv2);
+      newDiv.style.transform = `rotate(${i * 6}deg)`;
+
+      numbersDiv.appendChild(newDiv);
+
+    }

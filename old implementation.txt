@@ -84,3 +84,40 @@
   //     }
   //   }
   // }
+
+
+
+
+
+ // for (let i = 1; i <= 12; i++) {
+    //   for (let j = 1; j <= 4; j++) {
+    // const newDiv = document.createElement('div');
+    // newDiv.className = 'number';
+
+    // const innerDiv = document.createElement('div');
+
+    //     const minutesDiv = document.createElement('div');
+    //     minutesDiv.className = 'minutes';
+    //     minutesDiv.style.margin = 'auto';
+    //     minutesDiv.style.width = '1px';
+    //     minutesDiv.style.height = '5px';
+    //     minutesDiv.style.backgroundColor = 'black';
+
+    //     innerDiv.appendChild(minutesDiv);
+    //     newDiv.appendChild(innerDiv);
+    //     newDiv.style.transform = `rotate(${k++ * 6}deg)`;
+
+    //     numbersDiv.appendChild(newDiv);
+    //   }
+    //   const innerDiv = document.createElement('div');
+    //   innerDiv.innerText = i;
+    //   innerDiv.style.transform = `rotate(${-i * 6 * 5}deg)`;
+
+    //   const newDiv = document.createElement('div');
+    //   newDiv.className = 'number';
+    //   newDiv.appendChild(innerDiv);
+    //   newDiv.style.transform = `rotate(${i * 6 * 5}deg)`;
+
+    //   numbersDiv.appendChild(newDiv);
+    //   k++;
+    // }

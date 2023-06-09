@@ -1,22 +1,15 @@
-import './style.css';
+// import './style.css';
 class ClockApp {
   constructor() {
-    this.secRevolutions = 0;
-    this.secLastAngle = 0;
-    this.minRevolutions = 0;
-    this.minLastAngle = 0;
-    this.hourRevolutions = 0;
-    this.hourLastAngle = 0;
     this.clock = null;
     this.hourHand = null;
     this.minutesHand = null;
     this.secondsHand = null;
-    this.minutesDiv = null;
-    this.changeThemeButton = null;
     this.containerDiv = null;
-    this.optionsDiv = null;
     this.options = {
       timeZone: 'Asia/Kolkata',
+      isDayMode: true,
+      countries: ['Select Country', 'India', 'UTC', 'USA', 'Japan', 'South Africa']
     };
 
     this.initializeClock();
@@ -33,6 +26,12 @@ class ClockApp {
   }
 
   startInterval() {
+    this.secRevolutions = 0;
+    this.secLastAngle = 0;
+    this.minRevolutions = 0;
+    this.minLastAngle = 0;
+    this.hourRevolutions = 0;
+    this.hourLastAngle = 0;
     setInterval(() => {
       const currentDate = new Date();
       const localDateTime = currentDate.toLocaleString('en-US', this.options);
@@ -84,57 +83,33 @@ class ClockApp {
     numbersDiv.className = 'numbers-container';
 
     let k = 1;
-    for (let i = 1; i <= 12; i++) {
-      for (let j = 1; j <= 4; j++) {
-        const newDiv = document.createElement('div');
-        newDiv.className = 'number';
-
-        const innerDiv = document.createElement('div');
-
-        this.minutesDiv = document.createElement('div');
-        this.minutesDiv.className = 'minutes';
-        this.minutesDiv.style.margin = 'auto';
-        this.minutesDiv.style.width = '1px';
-        this.minutesDiv.style.height = '5px';
-        this.minutesDiv.style.backgroundColor = 'black';
-
-        innerDiv.appendChild(this.minutesDiv);
-        newDiv.appendChild(innerDiv);
-        newDiv.style.transform = `rotate(${k++ * 6}deg)`;
-
-        numbersDiv.appendChild(newDiv);
-      }
-      const innerDiv = document.createElement('div');
-      innerDiv.innerText = i;
-      innerDiv.style.transform = `rotate(${-i * 6 * 5}deg)`;
-
+    for (let i = 1; i <= 60; i++) {
       const newDiv = document.createElement('div');
-      newDiv.className = 'number';
+      newDiv.className = `number number${i}`;
+      const innerDiv = document.createElement('div');
+      if (i % 5 == 0) {
+        innerDiv.innerText = k;
+        k++;
+        innerDiv.style.transform = `rotate(${-i * 6}deg)`;
+      } else {
+        const minDiv = document.createElement('div');
+        minDiv.className = 'minutes';
+        innerDiv.appendChild(minDiv);
+      }
       newDiv.appendChild(innerDiv);
-      newDiv.style.transform = `rotate(${i * 6 * 5}deg)`;
-
       numbersDiv.appendChild(newDiv);
-      k++;
+      newDiv.style.transform = `rotate(${i * 6}deg)`;
     }
+
     this.clock.appendChild(numbersDiv);
     this.containerDiv.appendChild(this.clock);
-
+    
     this.changeThemeButton = document.createElement('button');
     this.changeThemeButton.innerText = 'Change Mode';
     this.changeThemeButton.style.marginTop = '10px';
     this.changeThemeButton.style.fontSize = '1rem';
     this.changeThemeButton.className = 'light-mode';
-    this.changeThemeButton.addEventListener('click', () =>
-      this.updateTheme(
-        this.changeThemeButton,
-        this.clock,
-        this.hourHand,
-        this.minutesHand,
-        this.secondsHand,
-        this.optionsDiv,
-        this.minutesDiv
-      )
-    );
+    this.changeThemeButton.addEventListener('click', () => { this.updateTheme(); });
   }
 
   createCountryOptions() {
@@ -142,24 +117,20 @@ class ClockApp {
     this.optionsDiv.id = 'form';
     this.optionsDiv.className = 'light-mode';
     this.optionsDiv.innerText = 'Timezone: ';
+
     const select = document.createElement('select');
-    const countries = [
-      'Select Country',
-      'India',
-      'UTC',
-      'USA',
-      'Japan',
-      'South Africa',
-    ];
-    countries.forEach((country) => {
+
+    this.options.countries.forEach((country) => {
       const option = document.createElement('option');
       option.value = country;
       option.innerText = country;
       select.appendChild(option);
     });
+
     this.optionsDiv.appendChild(select);
-    this.containerDiv.appendChild(this.optionsDiv);
     this.optionsDiv.appendChild(this.changeThemeButton);
+
+    this.containerDiv.appendChild(this.optionsDiv);
 
     select.addEventListener('change', (event) => {
       const selectedCountry = event.target.value;
@@ -190,42 +161,34 @@ class ClockApp {
     }
   }
 
-  updateTheme(
-    changeModeButton,
-    clockFace,
-    hourHand,
-    minutesHand,
-    secondsHand,
-    optionsDiv,
-    minutesDiv
-  ) {
-    minutesDiv = document.querySelectorAll('.minutes');
-    if (changeModeButton.className === 'light-mode') {
-      changeModeButton.className = 'dark-theme';
+  updateTheme() {
+    const minutesDiv = this.containerDiv.querySelectorAll('.minutes');
+    if (this.options.isDayMode) {
+      this.options.isDayMode = false;
 
-      clockFace.className = 'clock dark-theme';
-      clockFace.style.border = `7px solid rgb(215, 213, 213)`;
-      clockFace.style.setProperty('--circleColor', `hsl(224, 42%, 57%)`);
+      this.clock.className = 'clock dark-theme';
+      this.clock.style.border = `7px solid rgb(215, 213, 213)`;
+      this.clock.style.setProperty('--circleColor', `hsl(224, 42%, 57%)`);
 
-      optionsDiv.className = 'dark-theme';
-      hourHand.style.backgroundColor = `hsl(224, 42%, 57%)`;
-      minutesHand.style.backgroundColor = `hsl(224, 42%, 57%)`;
-      secondsHand.style.backgroundColor = `rgb(215, 213, 213)`;
+      this.optionsDiv.className = 'dark-theme';
+      this.hourHand.style.backgroundColor = `hsl(224, 42%, 57%)`;
+      this.minutesHand.style.backgroundColor = `hsl(224, 42%, 57%)`;
+      this.secondsHand.style.backgroundColor = `rgb(215, 213, 213)`;
 
       for (let i = 0; i < minutesDiv.length; i++) {
         minutesDiv[i].style.backgroundColor = `rgb(215, 213, 213)`;
       }
     } else {
-      changeModeButton.className = 'light-mode';
+      this.options.isDayMode = true;
 
-      clockFace.className = 'clock light-mode';
-      clockFace.style.border = `7px solid black`;
-      clockFace.style.setProperty('--circleColor', 'black');
+      this.clock.className = 'clock light-mode';
+      this.clock.style.border = `7px solid black`;
+      this.clock.style.setProperty('--circleColor', 'black');
 
-      optionsDiv.className = 'light-mode';
-      hourHand.style.backgroundColor = 'black';
-      minutesHand.style.backgroundColor = 'black';
-      secondsHand.style.backgroundColor = 'red';
+      this.optionsDiv.className = 'light-mode';
+      this.hourHand.style.backgroundColor = 'black';
+      this.minutesHand.style.backgroundColor = 'black';
+      this.secondsHand.style.backgroundColor = 'red';
 
       for (let i = 0; i < minutesDiv.length; i++) {
         minutesDiv[i].style.backgroundColor = `black`;
