@@ -9,15 +9,14 @@ class ClockApp {
     this.options = {
       timeZone: 'Asia/Kolkata',
       isDayMode: true,
-      countries: ['Select Country', 'India', 'UTC', 'USA', 'Japan', 'South Africa']
+      timeZoneCountries: ['Select Country', 'India', 'UTC', 'USA', 'Japan', 'South Africa']
     };
 
     this.initializeClock();
   }
 
   initializeClock() {
-    this.containerDiv = document.createElement('div');
-    this.containerDiv.className = 'clock-container';
+    this.containerDiv = this.createNewElement('div', 'clock-container');
     document.querySelector('.main').appendChild(this.containerDiv);
 
     this.createClockFace();
@@ -63,30 +62,22 @@ class ClockApp {
   }
 
   createClockFace() {
-    this.clock = document.createElement('div');
-    this.clock.className = 'clock light-mode';
-
-    this.hourHand = document.createElement('div');
-    this.hourHand.className = 'hand hour';
-
-    this.minutesHand = document.createElement('div');
-    this.minutesHand.className = 'hand min';
-
-    this.secondsHand = document.createElement('div');
-    this.secondsHand.className = 'hand second';
+    this.clock = this.createNewElement('div', 'clock light-mode');
+    this.hourHand = this.createNewElement('div', 'hand hour');
+    this.minutesHand = this.createNewElement('div', 'hand min');
+    this.secondsHand = this.createNewElement('div', 'hand second');
 
     this.clock.appendChild(this.hourHand);
     this.clock.appendChild(this.minutesHand);
     this.clock.appendChild(this.secondsHand);
 
-    const numbersDiv = document.createElement('div');
-    numbersDiv.className = 'numbers-container';
+    const numbersDiv = this.createNewElement('div', 'numbers-container');
 
     let firstHalfNumber = 1, secondHalfNumber = 7;
 
     for (let i = 1; i <= 30; i++) {
-      const newDiv = document.createElement('div');
-      newDiv.className = 'number';
+      const newDiv = this.createNewElement('div', 'number');
+      
       const innerDiv1 = document.createElement('div');
       const innerDiv2 = document.createElement('div');
 
@@ -103,12 +94,11 @@ class ClockApp {
         secondHalfNumber++;
       }
       else {
-        const minuteDiv1 = document.createElement('div');
-        minuteDiv1.className = 'minutes';
+        const minuteDiv1 = this.createNewElement('div', 'minutes');
+      
         innerDiv1.appendChild(minuteDiv1);
 
-        const minuteDiv2 = document.createElement('div');
-        minuteDiv2.className = 'minutes';
+        const minuteDiv2 = this.createNewElement('div', 'minutes');
         minuteDiv2.style.width = '1.5px';
         innerDiv2.appendChild(minuteDiv2);
         innerDiv2.style.marginLeft = '50%';
@@ -126,23 +116,21 @@ class ClockApp {
     this.clock.appendChild(numbersDiv);
     this.containerDiv.appendChild(this.clock);
     
-    this.changeThemeButton = document.createElement('button');
+    this.changeThemeButton = this.createNewElement('button', 'light-mode');
     this.changeThemeButton.innerText = 'Change Mode';
     this.changeThemeButton.style.marginTop = '10px';
     this.changeThemeButton.style.fontSize = '1rem';
-    this.changeThemeButton.className = 'light-mode';
     this.changeThemeButton.addEventListener('click', () => { this.updateTheme(); });
   }
 
   createCountryOptions() {
-    this.optionsDiv = document.createElement('div');
+    this.optionsDiv = this.createNewElement('div', 'light-mode');
     this.optionsDiv.id = 'form';
-    this.optionsDiv.className = 'light-mode';
     this.optionsDiv.innerText = 'Timezone: ';
 
     const select = document.createElement('select');
 
-    this.options.countries.forEach((country) => {
+    this.options.timeZoneCountries.forEach((country) => {
       const option = document.createElement('option');
       option.value = country;
       option.innerText = country;
@@ -216,6 +204,13 @@ class ClockApp {
         minutesDiv[i].style.backgroundColor = `black`;
       }
     }
+  }
+
+  createNewElement(element, className)
+  {
+    const newElement = document.createElement(element);
+    newElement.className = className;
+    return newElement;
   }
 }
 
